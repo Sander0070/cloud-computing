@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-computing-deployment
+  labels:
+    app: cloud-computing
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloud-computing
+  template:
+    metadata:
+      labels:
+        app: cloud-computing
+    spec:
+      containers:
+        - name: cloud-computing
+          image: ghcr.io/sander0070/cloud-computing:1.1
+          ports:
+            - containerPort: 8000
