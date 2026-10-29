@@ -1,0 +1,12 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: storingsmelder
+spec:
+  selector:
+    app: cloud-computing
+  ports:
+    - port: 80
+      targetPort: 8000
+  type: ClusterIP
